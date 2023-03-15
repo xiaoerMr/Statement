@@ -12,7 +12,7 @@ private fun isLoggable(): Boolean {
 
 fun i(tag: String, msg: String) {
     if (isLoggable()) {
-        Log.d(tag,msg)
+        Log.i(tag,msg)
     }
 }
 
@@ -24,13 +24,13 @@ fun d(tag: String, msg: String) {
 
 fun w(tag: String, msg: String) {
     if (isLoggable()) {
-        Log.d(tag,msg)
+        Log.w(tag,msg)
     }
 }
 
 fun e(tag: String, msg: String) {
     if (isLoggable()) {
-        Log.d(tag,msg)
+        Log.e(tag,msg)
     }
 }
 

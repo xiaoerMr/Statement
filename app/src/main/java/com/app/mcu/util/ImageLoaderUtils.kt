@@ -13,12 +13,13 @@ import com.bumptech.glide.request.transition.Transition
 
 
 class ImageLoaderUtils {
+    private val icon = com.luck.picture.lib.R.drawable.ps_image_placeholder
 
     fun load(view: ImageView, url: String) {
         Glide.with(view.context)
             .load(url)
-            .placeholder(com.luck.picture.lib.R.drawable.ps_image_placeholder)
-            .error(com.luck.picture.lib.R.drawable.ps_image_placeholder)
+            .placeholder(icon)
+            .error(icon)
             .into(view)
     }
 
@@ -43,7 +44,7 @@ class ImageLoaderUtils {
             .override(180, 180)
             .sizeMultiplier(0.5f)
             .transform(CenterCrop(), RoundedCorners(8))
-            .placeholder(com.luck.picture.lib.R.drawable.ps_image_placeholder)
+            .placeholder(icon)
             .into(imageView)
     }
 
@@ -52,7 +53,7 @@ class ImageLoaderUtils {
             .load(url)
             .override(200, 200)
             .centerCrop()
-            .placeholder(com.luck.picture.lib.R.drawable.ps_image_placeholder)
+            .placeholder(icon)
             .into(imageView)
     }
 

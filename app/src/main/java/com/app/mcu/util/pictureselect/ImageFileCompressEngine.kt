@@ -1,4 +1,4 @@
-package com.app.mcu.util
+package com.app.mcu.util.pictureselect
 
 import android.content.Context
 import android.net.Uri

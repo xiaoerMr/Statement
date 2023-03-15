@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.app.mcu.adapter.PictureSelectAdapter
 import com.app.mcu.base.BaseActivity
 import com.app.mcu.databinding.ActivityMainBinding
+import com.app.mcu.util.pictureselect.PictureSelectorUtils
 
 class PictureSelectorActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -27,19 +28,25 @@ class PictureSelectorActivity : BaseActivity<ActivityMainBinding>() {
         loadingDialogDismiss()
 
         viewBinding.let {
-            it.vSelectPhone.setOnClickListener {
-
-
+            it.vSelectCamera.setOnClickListener {
+                PictureSelectorUtils().selectCamera(
+                    context = this,
+                    resultListener = { res -> adapter.addAll(res) }
+                )
             }
 
             it.vSelectGallery.setOnClickListener {
-    //                d(TAG,"file= "+ FileUtils().getRootFilePath(this))
-    //                d(TAG,"file= "+ FileUtils().getRootFilePathDocuments())
-
+                PictureSelectorUtils().selectGallery(
+                    context = this,
+                    resultListener = { res -> adapter.addAll(res) },
+                )
             }
 
             it.vSelectGallerySys.setOnClickListener {
-
+                PictureSelectorUtils().selectGallerySystem(
+                    context = this,
+                    resultListener = { res -> adapter.addAll(res) }
+                )
             }
         }
     }
