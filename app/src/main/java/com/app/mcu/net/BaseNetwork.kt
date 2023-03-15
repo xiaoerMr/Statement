@@ -2,6 +2,7 @@ package com.app.mcu.net
 
 import com.app.mcu.BuildConfig
 import com.app.mcu.Constants
+import com.app.mcu.bean.Api
 import com.app.mcu.net.interceptor.CommonRequestInterceptor
 import com.app.mcu.net.interceptor.CommonResponseInterceptor
 import okhttp3.OkHttpClient
@@ -19,7 +20,7 @@ open class BaseNetwork {
 
     private val retrofit  by lazy{
          Retrofit.Builder()
-            .baseUrl(Constants.baseUrl)
+            .baseUrl(Api.base)
             .client(getOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

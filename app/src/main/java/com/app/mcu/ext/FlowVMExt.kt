@@ -31,7 +31,7 @@ suspend fun <T> BaseViewModel.launchFlow(
                 // 是否成功 200
                 when (response.code) {
                     Constants.RESPONSE_CODE_SUCCESS -> emit(response.data) // 成功
-                    Constants.RESPONSE_CODE_TOKEN_INVALID -> emit(response.data)  // goLoginPage() // token 失效
+                    Constants.RESPONSE_CODE_TOKEN_INVALID -> goLoginPage() // token 失效
                     else -> throw ApiException(response.msg)
                 }
             }
@@ -48,7 +48,7 @@ suspend fun <T> BaseViewModel.launchFlow(
 
 // 跳转到登录页面
 private fun goLoginPage() {
-
+e("---","----》 跳转到 登陆 页面")
 }
 
 private fun getExceptionMessage(throwable: Throwable): String {

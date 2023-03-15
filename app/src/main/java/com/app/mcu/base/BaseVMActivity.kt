@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType
 
 abstract class BaseVMActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivity<VB>() {
 
-    val viewModel: VM by lazy {
+    val mViewModel: VM by lazy {
         val type = javaClass.genericSuperclass
         val vmClass: Class<VM> = type!!.saveAs<ParameterizedType>().actualTypeArguments[1].saveAs()
         ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(vmClass)

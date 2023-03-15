@@ -4,17 +4,18 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.app.mcu.adapter.PictureSelectAdapter
 import com.app.mcu.base.BaseActivity
 import com.app.mcu.databinding.ActivityMainBinding
+import com.app.mcu.databinding.ActivityPictureSelectorBinding
 import com.app.mcu.util.pictureselect.PictureSelectorUtils
 
-class PictureSelectorActivity : BaseActivity<ActivityMainBinding>() {
+class PictureSelectorActivity : BaseActivity<ActivityPictureSelectorBinding>() {
 
     private val adapter by lazy { PictureSelectAdapter() }
 
     override fun initView() {
-        viewBinding.vTitleBar.apply {
-            title = "首页"
+        mViewBinding.vTitleBar.apply {
+            title = "图片选择框架"
         }
-        viewBinding.let {
+        mViewBinding.let {
             it.vList.layoutManager = GridLayoutManager(this,4)
             it.vList.adapter = adapter
         }
@@ -27,7 +28,7 @@ class PictureSelectorActivity : BaseActivity<ActivityMainBinding>() {
     override fun initListener() {
         loadingDialogDismiss()
 
-        viewBinding.let {
+        mViewBinding.let {
             it.vSelectCamera.setOnClickListener {
                 PictureSelectorUtils().selectCamera(
                     context = this,

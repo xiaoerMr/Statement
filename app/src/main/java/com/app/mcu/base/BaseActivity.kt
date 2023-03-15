@@ -15,7 +15,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(){
 
     val TAG by lazy { this.localClassName }
 
-    protected val viewBinding: VB
+    protected val mViewBinding: VB
         get() {
             return _viewBinding
         }
@@ -35,7 +35,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(){
         showLoadingDialog()
         initSystemBar()
 
-        setContentView(viewBinding.root)
+        setContentView(mViewBinding.root)
 
         initView()
         initData()

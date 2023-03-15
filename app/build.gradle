@@ -57,7 +57,7 @@ dependencies {
     // kotlin扩展（可选）
     implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
     // fragment快速实现（可选）已废弃
-    implementation 'com.geyifeng.immersionbar:immersionbar-components:3.2.2'
+//    implementation 'com.geyifeng.immersionbar:immersionbar-components:3.2.2'
 
     // 网络
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
