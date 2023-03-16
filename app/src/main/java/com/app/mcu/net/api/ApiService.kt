@@ -1,7 +1,6 @@
-package com.app.mcu.api
+package com.app.mcu.net.api
 
-import com.app.mcu.bean.Api
-import com.app.mcu.bean.LoginBean
+import com.app.mcu.model.LoginBean
 import com.app.mcu.net.BaseResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

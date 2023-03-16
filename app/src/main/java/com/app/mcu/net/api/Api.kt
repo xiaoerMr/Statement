@@ -1,4 +1,4 @@
-package com.app.mcu.bean
+package com.app.mcu.net.api
 
 object Api {
 

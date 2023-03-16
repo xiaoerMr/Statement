@@ -1,7 +1,7 @@
 package com.app.mcu.ui.vm
 
 import androidx.lifecycle.viewModelScope
-import com.app.mcu.api.ApiService
+import com.app.mcu.net.api.ApiService
 import com.app.mcu.base.BaseViewModel
 import com.app.mcu.ext.launchFlow
 import com.app.mcu.net.BaseNetwork

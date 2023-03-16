@@ -1,8 +1,7 @@
 package com.app.mcu.net
 
 import com.app.mcu.BuildConfig
-import com.app.mcu.Constants
-import com.app.mcu.bean.Api
+import com.app.mcu.net.api.Api
 import com.app.mcu.net.interceptor.CommonRequestInterceptor
 import com.app.mcu.net.interceptor.CommonResponseInterceptor
 import okhttp3.OkHttpClient
