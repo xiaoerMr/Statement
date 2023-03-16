@@ -1,6 +1,8 @@
 package com.app.mcu.net.api
 
+import com.app.mcu.model.ItemNews
 import com.app.mcu.model.LoginBean
+import com.app.mcu.net.BasePage
 import com.app.mcu.net.BaseResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -22,7 +24,7 @@ interface ApiService {
     suspend fun newList(
         @Query("currentPage") currentPage: Int,
         @Query("pageSize") pageSize: Int,
-    ): BaseResponse<LoginBean>
+    ): BaseResponse<BasePage<ItemNews>>
 
     @GET(Api.messageList)
     suspend fun messageList(

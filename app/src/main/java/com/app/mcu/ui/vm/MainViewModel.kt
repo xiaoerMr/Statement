@@ -3,8 +3,10 @@ package com.app.mcu.ui.vm
 import androidx.lifecycle.viewModelScope
 import com.app.mcu.net.api.ApiService
 import com.app.mcu.base.BaseViewModel
+import com.app.mcu.ext.d
 import com.app.mcu.ext.launchFlow
 import com.app.mcu.net.Network
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
 class MainViewModel:BaseViewModel() {
@@ -20,6 +22,10 @@ class MainViewModel:BaseViewModel() {
         viewModelScope.launch {
             launchFlow{
                 request.newList(currentPage, pageSize)
+            }.catch {
+
+            }.collect{
+
             }
         }
     }

@@ -26,29 +26,31 @@ suspend fun <T> BaseViewModel.launchFlow(
     }
 
     return flow {
-                //执行请求
-                val response = request.invoke()
-                // 是否成功 200
-                when (response.code) {
-                    Constants.RESPONSE_CODE_SUCCESS -> emit(response.data) // 成功
-                    Constants.RESPONSE_CODE_TOKEN_INVALID -> goLoginPage() // token 失效
-                    else -> throw ApiException(response.msg)
-                }
-            }
-            .flowOn(Dispatchers.IO)
-            .onCompletion { throwable ->
-                if (showLoading) {
+        e("flowVMExt", Thread.currentThread().name)
+        //执行请求
+        val response = request.invoke()
+        // 是否成功 200
 
-                }
-                throwable?.let {
-                    throw ApiException(getExceptionMessage(throwable))
-                }
+        when (response.code) {
+            Constants.RESPONSE_CODE_SUCCESS -> emit(response.data) // 成功
+            Constants.RESPONSE_CODE_TOKEN_INVALID -> goLoginPage() // token 失效
+            else -> throw ApiException(response.msg)
+        }
+    }
+        .flowOn(Dispatchers.IO)
+        .onCompletion { throwable ->
+            if (showLoading) {
+
             }
+            throwable?.let {
+                throw ApiException(getExceptionMessage(it))
+            }
+        }
 }
 
 // 跳转到登录页面
 private fun goLoginPage() {
-e("---","----》 跳转到 登陆 页面")
+    e("---", "----》 跳转到 登陆 页面")
 }
 
 private fun getExceptionMessage(throwable: Throwable): String {
