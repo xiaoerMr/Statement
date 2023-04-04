@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Statement"
 include ':app'
+include ':module_login'
+include ':lib_comment'
