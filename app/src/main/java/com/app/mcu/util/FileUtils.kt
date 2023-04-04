@@ -35,8 +35,16 @@ class FileUtils {
         val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).path +  "${File.separator}$fileName${File.separator}"
         val file = File(path)
         if (!file.exists()) {
-            file.mkdirs()
+            file.mkdir()
         }
+        return  path
+    }
+
+    /**
+     * documents 公共目录下的 /storage/emulated/0/Documents/
+     */
+    fun getRootPublicDocuments(): String{
+        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).path +  File.separator
         return  path
     }
 
@@ -47,5 +55,11 @@ class FileUtils {
         } else {
             Environment.getExternalStorageDirectory().absolutePath
         }
+    }
+
+    fun getFileType(fileName:String):String{
+        val index = fileName.lastIndexOf(".")
+        return if (index <= -1)  ""
+        else fileName.substring(index +1)
     }
 }
