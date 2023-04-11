@@ -13,4 +13,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="请求接口"/>
+    <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/v_go_select_phone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="图片选择"/>
 </LinearLayout>
