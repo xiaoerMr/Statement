@@ -79,45 +79,10 @@ dependencies {
 
     if (project.name == "app") {
 
-        // 适配
-        implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
         // LiveData处理activity销毁重建的数据倒灌问题，可以被多个观察者订阅
         api 'com.kunminx.arch:unpeek-livedata:7.4.0'
-        // dialog
-        implementation "com.kongzue.dialogx:DialogX:0.0.47"
-
-        // 基础依赖包，必须要依赖
-        implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
-        // kotlin扩展（可选）
-        implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
-        // fragment快速实现（可选）已废弃
-//    implementation 'com.geyifeng.immersionbar:immersionbar-components:3.2.2'
-
-        // 网络
-        implementation 'com.squareup.okhttp3:okhttp:4.10.0'
-        implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
-        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-//    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-        implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
-        // 协程
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-        // 扩展
-        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 //    implementation("androidx.fragment:fragment-ktx:1.5.5")
 //    implementation("androidx.activity:activity-ktx:1.6.1")
-
-        // 图片选择
-        implementation 'io.github.lucksiege:pictureselector:v3.10.8'
-        implementation 'io.github.lucksiege:compress:v3.10.8'
-        implementation 'io.github.lucksiege:ucrop:v3.10.8'
-
-//    implementation("io.coil-kt:coil:2.2.2")
-        implementation 'com.github.bumptech.glide:glide:4.15.0'
-        annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
-        // adapt
-        implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
 
         implementation project(path: ':lib_comment')
     } else if (project.name == "module_login") {
@@ -130,8 +95,40 @@ dependencies {
         api AndroidX.material
         api AndroidX.constraintLayout
 
+        api AndroidX.lifecycleRuntimeKtx
+        api AndroidX.lifecycleViewModelKtx
+        api AndroidX.coroutinesAndroid
+
+
         api AndroidX.junit
         api AndroidX.junitExt
         api AndroidX.espressoCore
+
+
+        api OtherPart.okhttp
+        api OtherPart.okhttpLoggingInterceptor
+        api OtherPart.retrofit
+        api OtherPart.retrofitConverterGson
+
+        // 适配
+        api OtherPart.androidAutoSize
+
+        api OtherPart.DialogX
+
+        // 沉浸式bar
+        api OtherPart.immersionBar
+        api OtherPart.immersionBarKtx
+
+        api OtherPart.glide
+        api OtherPart.glideCompiler
+
+        // 图片选择框架
+        api OtherPart.pictureSelector
+        api OtherPart.pictureSelectorCompress
+        api OtherPart.pictureSelectorUcrop
+
+        // adapter
+        api OtherPart.baseRecyclerViewAdapterHelper
+
     }
 }
