@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".PictureSelectorActivity">
 
-    <com.app.mcu.view.TitleBarView
+    <com.app.lib_comment.view.TitleBarView
         android:id="@+id/v_title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.mcu.databinding.ItemAdapterPictureSelectBinding
-import com.app.mcu.util.ImageLoaderUtils
+import com.app.lib_comment.util.ImageLoaderUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.luck.picture.lib.entity.LocalMedia
 

@@ -1,15 +1,14 @@
 package com.app.mcu.ui.vm
 
 import androidx.lifecycle.viewModelScope
+import com.app.lib_comment.base.BaseViewModel
+import com.app.lib_comment.ext.launchFlow
 import com.app.mcu.net.api.ApiService
-import com.app.mcu.base.BaseViewModel
-import com.app.mcu.ext.d
-import com.app.mcu.ext.launchFlow
-import com.app.mcu.net.Network
+import com.app.lib_comment.net.Network
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class MainViewModel:BaseViewModel() {
+class MainViewModel: BaseViewModel() {
 
     private var currentPage = 1
     private val pageSize = 20

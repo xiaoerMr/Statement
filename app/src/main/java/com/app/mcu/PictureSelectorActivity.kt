@@ -1,11 +1,10 @@
 package com.app.mcu
 
 import androidx.recyclerview.widget.GridLayoutManager
+import com.app.lib_comment.base.BaseActivity
 import com.app.mcu.adapter.PictureSelectAdapter
-import com.app.mcu.base.BaseActivity
-import com.app.mcu.databinding.ActivityMainBinding
 import com.app.mcu.databinding.ActivityPictureSelectorBinding
-import com.app.mcu.util.pictureselect.PictureSelectorUtils
+import com.app.lib_comment.util.pictureselect.PictureSelectorUtils
 
 class PictureSelectorActivity : BaseActivity<ActivityPictureSelectorBinding>() {
 

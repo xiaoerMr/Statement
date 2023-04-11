@@ -120,7 +120,7 @@ dependencies {
         api OtherPart.immersionBarKtx
 
         api OtherPart.glide
-        api OtherPart.glideCompiler
+//        annotationProcessor OtherPart.glideCompiler
 
         // 图片选择框架
         api OtherPart.pictureSelector

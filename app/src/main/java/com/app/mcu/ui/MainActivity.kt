@@ -1,6 +1,6 @@
 package com.app.mcu.ui
 
-import com.app.mcu.base.BaseVMActivity
+import com.app.lib_comment.base.BaseVMActivity
 import com.app.mcu.databinding.ActivityMainBinding
 import com.app.mcu.ui.vm.MainViewModel
 

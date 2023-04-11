@@ -1,9 +1,10 @@
 package com.app.mcu.net.api
 
+import com.app.lib_comment.net.api.Api
 import com.app.mcu.model.ItemNews
 import com.app.mcu.model.LoginBean
-import com.app.mcu.net.BasePage
-import com.app.mcu.net.BaseResponse
+import com.app.lib_comment.net.BasePage
+import com.app.lib_comment.net.BaseResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET

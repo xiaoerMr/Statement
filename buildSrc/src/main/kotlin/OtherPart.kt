@@ -25,7 +25,7 @@ object OtherPart {
     const val baseRecyclerViewAdapterHelper =  "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
 
     //    implementation("io.coil-kt:coil:2.2.2")
-    private const val vGlide = "4.15.0"
+    private const val vGlide = "4.15.1"
     const val glide = "com.github.bumptech.glide:glide:$vGlide"
     const val glideCompiler =  "com.github.bumptech.glide:compiler:$vGlide"
 
