@@ -4,5 +4,6 @@
     <color name="color_bg_theme">#EEEEEE</color>
     <color name="color_black">#FF000000</color>
     <color name="color_white">#FFFFFFFF</color>
+    <color name="color_3E72F9">#3E72F9</color>
 
 </resources>
