@@ -12,8 +12,5 @@ data class BasePage<T>(
     val total:Int,
     val size:Int,
     var current:Int,
-    val orders:Any,
-    val hitCount:Boolean,
-    val searchCount:Boolean,
     var pages:Int
 )

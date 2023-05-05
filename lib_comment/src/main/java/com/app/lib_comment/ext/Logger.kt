@@ -4,32 +4,30 @@ package com.app.lib_comment.ext
 
 import android.util.Log
 import com.app.lib_comment.BuildConfig
+import com.app.lib_comment.util.SystemInfo
 import java.util.*
 
-private fun isLoggable(): Boolean {
-    return BuildConfig.DEBUG
-}
 
 fun i(tag: String, msg: String) {
-    if (isLoggable()) {
+    if (SystemInfo.getDebug()) {
         Log.i(tag,msg)
     }
 }
 
 fun d(tag: String, msg: String) {
-    if (isLoggable()) {
+    if (SystemInfo.getDebug()) {
         Log.d(tag,msg)
     }
 }
 
 fun w(tag: String, msg: String) {
-    if (isLoggable()) {
+    if (SystemInfo.getDebug()) {
         Log.w(tag,msg)
     }
 }
 
 fun e(tag: String, msg: String) {
-    if (isLoggable()) {
+    if (SystemInfo.getDebug()) {
         Log.e(tag,msg)
     }
 }

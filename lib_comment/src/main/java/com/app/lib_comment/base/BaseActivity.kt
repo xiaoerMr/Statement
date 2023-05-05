@@ -66,7 +66,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(){
     /**
      * 状态栏导航栏初始化
      */
-    fun initSystemBar() {
+    private fun initSystemBar() {
         immersionBar {
             transparentStatusBar()
             statusBarDarkFont(true)

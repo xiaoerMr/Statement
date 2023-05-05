@@ -1,9 +1,7 @@
 package com.app.lib_comment.net
 
-import com.app.lib_comment.BuildConfig
 import com.app.lib_comment.net.api.Api
-import com.app.lib_comment.net.interceptor.CommonRequestInterceptor
-import com.app.lib_comment.net.interceptor.CommonResponseInterceptor
+import com.app.lib_comment.util.SystemInfo
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,6 +11,7 @@ import java.util.concurrent.TimeUnit
 open class Network {
     companion object{
         const val TAG = "BaseNetworkApi"
+        const val TIME_OUT = 10L
     }
 
     fun <T> getApiService(clazz :Class<T>): T = retrofit.create(clazz)
@@ -35,15 +34,17 @@ open class Network {
 
     private val defaultOkHttpClient by lazy {
         val builder = OkHttpClient.Builder()
-            .callTimeout(10L, TimeUnit.SECONDS)
-            .connectTimeout(10L, TimeUnit.SECONDS)
-            .readTimeout(10L, TimeUnit.SECONDS)
-            .writeTimeout(10L, TimeUnit.SECONDS)
+            .callTimeout(TIME_OUT, TimeUnit.SECONDS)
+            .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+            .readTimeout(TIME_OUT, TimeUnit.SECONDS)
+            .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
 
-        builder.addInterceptor(CommonRequestInterceptor())
-        builder.addInterceptor(CommonResponseInterceptor())
-        if (BuildConfig.DEBUG) {
+        // 公共请求头
+//        builder.addInterceptor(CommonRequestInterceptor())
+        // 请求耗时
+//        builder.addInterceptor(CommonResponseInterceptor())
+        if (SystemInfo.getDebug()) {
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             builder.addInterceptor(loggingInterceptor)
