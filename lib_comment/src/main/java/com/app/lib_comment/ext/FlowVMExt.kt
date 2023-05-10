@@ -32,6 +32,7 @@ suspend fun <T> BaseViewModel.launchFlow(
         // 是否成功 200
 
         when (response.code) {
+            0 -> emit(response.data) // 蒲公英请求成功
             Constants.RESPONSE_CODE_SUCCESS -> emit(response.data) // 成功
             Constants.RESPONSE_CODE_TOKEN_INVALID -> goLoginPage() // token 失效
             else -> throw ApiException(response.msg)

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vUpdateBg"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:background="@drawable/icon_bg_update_version"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/vClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/icon_update_close"
+        app:layout_constraintEnd_toEndOf="@id/vUpdateBg"
+        app:layout_constraintBottom_toTopOf="@id/vUpdateBg" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/vUpdate"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_bt_update"
+        android:gravity="center"
+        android:text="升级"
+        android:textColor="@color/color_white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/vUpdateBg"
+        app:layout_constraintStart_toStartOf="@+id/vUpdateBg"
+        app:layout_constraintTop_toBottomOf="@+id/vUpdateBg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vUpdateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="发现新版本"
+        android:textColor="@color/color_white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vUpdateBg"
+        app:layout_constraintStart_toStartOf="@id/vUpdateBg"
+        app:layout_constraintTop_toTopOf="@id/vUpdateBg"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vUpdateContext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新版本:v3.2.2"
+        android:textColor="@color/color_black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vUpdateBg"
+        app:layout_constraintStart_toStartOf="@id/vUpdateTitle"
+        app:layout_constraintTop_toBottomOf="@id/vUpdateTitle"
+        app:layout_constraintVertical_bias="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

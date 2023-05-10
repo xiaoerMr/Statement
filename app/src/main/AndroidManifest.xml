@@ -50,6 +50,18 @@
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" />
+
+<!--        -->
+        <provider
+            android:authorities="${applicationId}.fileProvider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+        </provider>
     </application>
 
 <!--    图片选择器-->

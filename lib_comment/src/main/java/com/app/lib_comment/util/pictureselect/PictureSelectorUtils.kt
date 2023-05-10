@@ -131,7 +131,7 @@ class PictureSelectorUtils {
 
     private fun loge(result: ArrayList<LocalMedia>) {
         result.forEach {
-            d(this.javaClass.name, "-------> SDK : ${SystemInfo.getSDK()}")
+            d(this.javaClass.name, "-------> SDK : ${SystemInfo().getSDK()}")
             d(this.javaClass.name, "path = ${it.path}")
             d(this.javaClass.name, "available = ${it.availablePath}")
             d(this.javaClass.name, "real = ${it.realPath}")

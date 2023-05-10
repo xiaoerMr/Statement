@@ -2,6 +2,7 @@ package com.app.mcu.ext
 
 import android.content.Context
 import android.content.ContextWrapper
+import android.text.TextUtils
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentActivity
@@ -12,16 +13,16 @@ import androidx.fragment.app.FragmentActivity
  * com.qisan.baselib.ext
  */
 
-inline fun <reified T> Any.saveAs() : T{
+inline fun <reified T> Any.saveAs(): T {
     return this as T
 }
 
 @Suppress("UNCHECKED_CAST")
-fun <T> Any.saveAsUnChecked() : T{
+fun <T> Any.saveAsUnChecked(): T {
     return this as T
 }
 
-inline fun <reified T> Any.isEqualType() : Boolean{
+inline fun <reified T> Any.isEqualType(): Boolean {
     return this is T
 }
 
@@ -29,7 +30,7 @@ inline fun <reified T> Any.isEqualType() : Boolean{
  * Boolean转Visibility
  */
 fun Boolean.toVisibility() = if (this) View.VISIBLE else View.GONE
-fun View.toVisibility(show:Boolean) {
+fun View.toVisibility(show: Boolean) {
     if (this.isVisible != show) {
         this.isVisible = show
     }
@@ -49,4 +50,18 @@ fun Context.getActivity(): FragmentActivity? {
         else -> null
     }
 }
+
+/**
+ * 检查空安全
+ * 为空则返回 空字符串
+ */
+fun String?.checkEmptySafe(): String {
+    if (this == null) {
+        return  ""
+    }
+    return this.trim().apply {
+        if (isNullOrBlank()) "" else this
+    }
+}
+
 

@@ -44,7 +44,7 @@ open class Network {
 //        builder.addInterceptor(CommonRequestInterceptor())
         // 请求耗时
 //        builder.addInterceptor(CommonResponseInterceptor())
-        if (SystemInfo.getDebug()) {
+        if (SystemInfo().getDebug()) {
             val loggingInterceptor = HttpLoggingInterceptor()
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             builder.addInterceptor(loggingInterceptor)
